@@ -1,3 +1,12 @@
+function cookiesPerstore () {
+    for (i=0;i<stores.length;i++){
+     var cstore = stores[i].aveCookieSale * stores[i].custPerHour;
+     for (i=0;i<"8";i++){
+      document.write(cstore[i]);
+    }
+  }
+}
+
 var pioneerSq = {
   minCust: 17,
   maxCust: 88,
@@ -25,7 +34,7 @@ var washSq = {
 var sellwood = {
   minCust: 20,
   maxCust: 48,
-  aveCookieSale: 3,3,
+  aveCookieSale: 33,
   custPerHour: function() {
     Math.floor(Math.random() * 10) + 1;
   }
@@ -38,3 +47,5 @@ var pearl = {
     Math.floor(Math.random() * 10) + 1;
   }
 };
+
+var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
