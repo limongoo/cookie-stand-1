@@ -1,3 +1,7 @@
+var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
+function cookiesPerHour {
+    stores[i].custPerHour * stores[i].aveCookieSale;
+}
 var pioneerSq = {
   minCust: 17,
   maxCust: 88,
@@ -25,7 +29,7 @@ var washSq = {
 var sellwood = {
   minCust: 20,
   maxCust: 48,
-  aveCookieSale: 3,3,
+  aveCookieSale: 3.3,
   custPerHour: function() {
     Math.floor(Math.random() * 10) + 1;
   }
