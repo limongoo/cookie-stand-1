@@ -1,0 +1,16 @@
+ul {
+  padding-left: 0;
+}
+nav {
+  text-align: center;
+  background-color: 
+}
+nav li {
+  display: inline-block;
+  font-size: 18;
+  padding: 20px;
+  text-align: center;
+}
+#header {
+  font-size: 36;
+}
