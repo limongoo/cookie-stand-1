@@ -39,44 +39,53 @@ var pearl = {
     return Math.floor(Math.random() * 10) + 1;
   }
 };
+//stores each object into one array
 var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
+//stores the simulted amounts of cookies sold an hour for each store
 var pearlCookiesPerHour = [];
 var pioneerSqCookiesPerHour = [];
 var pdxAirportCookiesPerHour = [];
 var washSqCookiesPerHour = [];
 var sellwoodCookiesPerHour = [];
+//total number of cookies sold a day
+var pearlCookiesTotal = 0;
+var pioneerSqCookiesTotal = 0;
+var pdxAirportCookiesTotal = 0;
+var washSqCookiesTotal = 0;
+var sellwoodCookiesTotal = 0;
+//each of the store is open
+var hours = ["8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "Total"];
 
-//calculates cookies purchased per hour for pearl
-for(i=0;i<8;i++) {
+//calculates cookies purchased per hour for each location and prints it to the //page in an unordered list
+for(i=0;i<10;i++) {
   var pearlCookies = Math.round(pearl.avgCookieSale * pearl.custPerHour());
-  pearlCookiesPerHour.push(pearlCookies);
-  document.getElementById("pearl").innerHTML += "<li>" + i + "am: " + pearlCookies + "</li>";
-}
-
-//calculates cookies purchased per hour for pioneerSq
-for(i=0;i<8;i++) {
   var pioneerSqCookies = Math.round(pioneerSq.avgCookieSale * pioneerSq.custPerHour());
-  pioneerSqCookiesPerHour.push(pioneerSqCookies);
-  document.getElementById("pioneerSq").innerHTML += "<li>" + i + "am: " + pioneerSqCookies + "</li>";
-}
-
-//calculates cookies purchased per hour for sellwood
-for(i=0;i<8;i++) {
   var sellwoodCookies = Math.round(sellwood.avgCookieSale * sellwood.custPerHour());
-  sellwoodCookiesPerHour.push(sellwoodCookies);
-  document.getElementById("sellwood").innerHTML += "<li>" + i + "am: " + sellwoodCookies + "</li>";
-}
-
-//calculates cookies purchased per hour for pdxAirport
-for(i=0;i<8;i++) {
   var pdxAirportCookies = Math.round(pdxAirport.avgCookieSale * pdxAirport.custPerHour());
+  var washSqCookies = Math.round(washSq.avgCookieSale * washSq.custPerHour());
+
+
+  pearlCookiesPerHour.push(pearlCookies);
+  pioneerSqCookiesPerHour.push(pioneerSqCookies);
+  sellwoodCookiesPerHour.push(sellwoodCookies);
   pdxAirportCookiesPerHour.push(pdxAirportCookies);
-  document.getElementById("pdxAirport").innerHTML += "<li>" + i + "am: " + pdxAirportCookies + "</li>";
+  washSqCookiesPerHour.push(washSqCookies);
+
+  pearlCookiesTotal = pearlCookiesTotal + pearlCookiesPerHour[i];
+  pioneerSqCookiesTotal = pioneerSqCookiesTotal + pioneerSqCookiesPerHour[i];
+  sellwoodCookiesTotal = sellwoodCookiesTotal + sellwoodCookiesPerHour[i];
+  pdxAirportCookiesTotal = pdxAirportCookiesTotal + pdxAirportCookiesPerHour[i];
+  washSqCookiesTotal = washSqCookiesTotal + washSqCookiesPerHour[i];
+
+  document.getElementById("pearl").innerHTML += "<li>" + hours[i] + ": " + pearlCookiesPerHour[i] + " cookies sold."
+  document.getElementById("pioneerSq").innerHTML += "<li>" + hours[i] + ": " + pioneerSqCookiesPerHour[i] + " cookies sold."
+  document.getElementById("sellwood").innerHTML += "<li>" + hours[i] + ": " + sellwoodCookiesPerHour[i] + " cookies sold."
+  document.getElementById("pdxAirport").innerHTML += "<li>" + hours[i] + ": " + pdxAirportCookiesPerHour[i] + " cookies sold."
+  document.getElementById("washSq").innerHTML += "<li>" + hours[i] + ": " + washSqCookiesPerHour[i] + " cookies sold."
 }
 
-//calculates cookies purchased per hour for washSq
-for(i=0;i<8;i++) {
-  var washSqCookies = Math.round(washSq.avgCookieSale * washSq.custPerHour());
-  washSqCookiesPerHour.push(washSqCookies);
-  document.getElementById("washSq").innerHTML += "<li>" + i + "am: " + washSqCookies + "</li>";
-}
+document.getElementById("pearl").innerHTML += "<li>Total: " + pearlCookiesTotal + " sold today!"
+document.getElementById("pioneerSq").innerHTML += "<li>Total: " + pioneerSqCookiesTotal + " sold today!"
+document.getElementById("sellwood").innerHTML += "<li>Total: " + sellwoodCookiesTotal + " sold today!"
+document.getElementById("pdxAirport").innerHTML += "<li>Total: " + pdxAirportCookiesTotal + " sold today!"
+document.getElementById("washSq").innerHTML += "<li>Total: " + washSqCookiesTotal + " sold today!" 
