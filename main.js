@@ -77,15 +77,15 @@ for(i=0;i<10;i++) {
   pdxAirportCookiesTotal = pdxAirportCookiesTotal + pdxAirportCookiesPerHour[i];
   washSqCookiesTotal = washSqCookiesTotal + washSqCookiesPerHour[i];
 
-  document.getElementById("pearl").innerHTML += "<li>" + hours[i] + ": " + pearlCookiesPerHour[i] + " cookies sold."
-  document.getElementById("pioneerSq").innerHTML += "<li>" + hours[i] + ": " + pioneerSqCookiesPerHour[i] + " cookies sold."
-  document.getElementById("sellwood").innerHTML += "<li>" + hours[i] + ": " + sellwoodCookiesPerHour[i] + " cookies sold."
-  document.getElementById("pdxAirport").innerHTML += "<li>" + hours[i] + ": " + pdxAirportCookiesPerHour[i] + " cookies sold."
-  document.getElementById("washSq").innerHTML += "<li>" + hours[i] + ": " + washSqCookiesPerHour[i] + " cookies sold."
+  document.getElementById("pearl").innerHTML += "<li>" + hours[i] + ": " + pearlCookiesPerHour[i] + " cookies sold. </li>"
+  document.getElementById("pioneerSq").innerHTML += "<li>" + hours[i] + ": " + pioneerSqCookiesPerHour[i] + " cookies sold. </li>"
+  document.getElementById("sellwood").innerHTML += "<li>" + hours[i] + ": " + sellwoodCookiesPerHour[i] + " cookies sold. </li>"
+  document.getElementById("pdxAirport").innerHTML += "<li>" + hours[i] + ": " + pdxAirportCookiesPerHour[i] + " cookies sold. </li>"
+  document.getElementById("washSq").innerHTML += "<li>" + hours[i] + ": " + washSqCookiesPerHour[i] + " cookies sold. </li>"
 }
 
 document.getElementById("pearl").innerHTML += "<li>Total: " + pearlCookiesTotal + " sold today!"
 document.getElementById("pioneerSq").innerHTML += "<li>Total: " + pioneerSqCookiesTotal + " sold today!"
 document.getElementById("sellwood").innerHTML += "<li>Total: " + sellwoodCookiesTotal + " sold today!"
 document.getElementById("pdxAirport").innerHTML += "<li>Total: " + pdxAirportCookiesTotal + " sold today!"
-document.getElementById("washSq").innerHTML += "<li>Total: " + washSqCookiesTotal + " sold today!" 
+document.getElementById("washSq").innerHTML += "<li>Total: " + washSqCookiesTotal + " sold today!"
