@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-function cookiesPerstore () {
-    for (i=0;i<stores.length;i++){
-     var cstore = stores[i].aveCookieSale * stores[i].custPerHour;
-     for (i=0;i<"8";i++){
-      document.write(cstore[i]);
-    }
-  }
-}
-
-=======
 //five objects representing each store
->>>>>>> class6
 var pioneerSq = {
   minCust: 17,
   maxCust: 88,
@@ -47,14 +35,10 @@ var washSq = {
 var sellwood = {
   minCust: 20,
   maxCust: 48,
-<<<<<<< HEAD
-  aveCookieSale: 33,
-=======
   avgCookieSale: 3.3,
   cookies: [],
   totalCookies: 0,
   storeID: "sellwood",
->>>>>>> class6
   custPerHour: function() {
     return Math.random() * (this.maxCust - this.minCust) + this.minCust;
   }
@@ -71,9 +55,6 @@ var pearl = {
   }
 };
 
-<<<<<<< HEAD
-var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
-=======
 //stores each object into one array
 var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
 
@@ -92,4 +73,3 @@ for(storeIndex = 0; storeIndex < stores.length; storeIndex++) {
   }
   document.getElementById(store.storeID).innerHTML += "<li>Total: " + store.totalCookies + " sold today!" //prints total cookies sold daily
 }
->>>>>>> class6
