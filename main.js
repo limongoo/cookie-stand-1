@@ -68,7 +68,11 @@ for(storeIndex = 0; storeIndex < stores.length; storeIndex++) {
     var cookies = Math.round(store.avgCookieSale * store.custPerHour());
     store.cookies.push(cookies); //calculates a random # of cookies sold/hr
     store.totalCookies += cookies;
-    document.getElementById(store.storeID).innerHTML += "<li>" + hours[hoursIndex] + ": " + cookies + " cookies sold. </li>" //prints the hour and cookies sold in that hr
+    var cell = document.getElementById("tableCell");
+    var list = document.createElement("ul");
+    list.setAttribute("id", store.storeID);
+    cell.appendChild(list);
+    document.getElementById(store.storeID).innerHTML += "<li>" + hours[hoursIndex] + ": " + cookies + " cookies sold. </li>";
 
   }
   document.getElementById(store.storeID).innerHTML += "<li>Total: " + store.totalCookies + " sold today!" //prints total cookies sold daily
