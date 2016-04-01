@@ -22,8 +22,15 @@ var stores = [pioneerSq, pdxAirport, washSq, sellwood, pearl];
 
 //each hour the store is open
 var hours = ["8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var headerhours = ["", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "Total"];
 var table = document.getElementById('tableBody');
-
+var row = table.insertRow(0);
+for (i=0; i<headerhours.length; i++) {
+  var cell = row.insertCell(i);
+    // if (cell == row.insertCell(1)) {
+    cell.innerHTML = headerhours[i];
+    // }
+}
 
 
 //calculates # of cookies per hour sold per store
